@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3EA659D1-6A5C-4157-A1B1-9FDE12DBF60C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B964971C-67F5-46F0-86A8-2C92E62BCDA2}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DapperExercise", "src\DapperExercise\DapperExercise.xproj", "{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B3DC7D6-53FA-4E72-9265-06AF7D852BCC} = {3EA659D1-6A5C-4157-A1B1-9FDE12DBF60C}
+	EndGlobalSection
+EndGlobal
