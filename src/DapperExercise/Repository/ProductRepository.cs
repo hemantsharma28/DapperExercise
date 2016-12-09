@@ -42,7 +42,17 @@ namespace DapperExercise.Repository
             using (IDbConnection dbConnection = Connection)
             {
                 dbConnection.Open();
-                return dbConnection.Query<Product>("SELECT * FROM Products");
+
+                using (var multipleResult = dbConnection.QueryMultiple("spGetProducts", commandType: CommandType.StoredProcedure))
+                {
+                    var product = multipleResult.Read<Product>();
+
+                    //return IEnumerable<product>;
+                    //return dbConnection.Query<Product>(product.ToString());
+                    return product;
+                }
+
+                //return dbConnection.Query<Product>("SELECT * FROM Products");
             }
         }
 
@@ -50,10 +60,36 @@ namespace DapperExercise.Repository
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "SELECT * FROM Products"
-                               + " WHERE ProductId = @Id";
+                //    string sQuery = "SELECT * FROM Products"
+                //                   + " WHERE ProductId = @Id";
+                //    dbConnection.Open();
+                //    return dbConnection.Query<Product>(sQuery, new { Id = id }).FirstOrDefault();
+                //}
+                //Product p = new Product();
                 dbConnection.Open();
-                return dbConnection.Query<Product>(sQuery, new { Id = id }).FirstOrDefault();
+                //   
+
+                using (var multipleResult = dbConnection.QueryMultiple("spGetProductById", new { Id = id }, commandType: CommandType.StoredProcedure))
+                {
+                    var product = multipleResult.Read<Product>().SingleOrDefault();
+
+                    return product;
+
+                }
+                //dbConnection.Open();
+                //var p = new DynamicParameters();
+                //p.Add("@ProductId", id);
+                //p.Add("@Name", dbType: DbType.String, direction: ParameterDirection.Output);
+                //p.Add("@Quantity", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                //p.Add("@Price", dbType: DbType.Decimal, direction: ParameterDirection.Output);
+
+                //dbConnection.Execute("spGetProductById", p, commandType: CommandType.StoredProcedure);
+                //Product p1 = new Product();
+                //p1.Name = p.Get<string>("@Name");
+                //p1.Quantity = p.Get<int>("@Quantity");
+                //p1.Price = p.Get<float>("@Price");
+                //return p1;
+
             }
         }
 

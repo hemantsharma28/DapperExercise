@@ -1,5 +1,5 @@
---temp-output:c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\obj\Debug\netcoreapp1.0\
---out:c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\bin\Debug\netcoreapp1.0\DapperExercise.dll
+--temp-output:D:\Shared\DapperExercise\src\DapperExercise\obj\Debug\netcoreapp1.0\
+--out:D:\Shared\DapperExercise\src\DapperExercise\bin\Debug\netcoreapp1.0\DapperExercise.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -181,10 +181,10 @@
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XPath\4.0.1\ref\netstandard1.3\System.Xml.XPath.dll
---resource:"c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\obj\Debug\netcoreapp1.0\DapperExercisedotnet-compile.deps.json",DapperExercise.deps.json
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Program.cs
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Startup.cs
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Controllers\ProductController.cs
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Controllers\ValuesController.cs
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Model\Product.cs
-c:\users\sharma_hm\documents\visual studio 2015\Projects\DapperExercise\src\DapperExercise\Repository\ProductRepository.cs
+--resource:"D:\Shared\DapperExercise\src\DapperExercise\obj\Debug\netcoreapp1.0\DapperExercisedotnet-compile.deps.json",DapperExercise.deps.json
+D:\Shared\DapperExercise\src\DapperExercise\Program.cs
+D:\Shared\DapperExercise\src\DapperExercise\Startup.cs
+D:\Shared\DapperExercise\src\DapperExercise\Controllers\ProductController.cs
+D:\Shared\DapperExercise\src\DapperExercise\Controllers\ValuesController.cs
+D:\Shared\DapperExercise\src\DapperExercise\Model\Product.cs
+D:\Shared\DapperExercise\src\DapperExercise\Repository\ProductRepository.cs
