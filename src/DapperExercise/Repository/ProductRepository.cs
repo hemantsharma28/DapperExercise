@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using LogEntry;
 
 namespace DapperExercise.Repository
 {
@@ -74,22 +75,31 @@ namespace DapperExercise.Repository
                     var product = multipleResult.Read<Product>().SingleOrDefault();
 
                     return product;
-
                 }
-                //dbConnection.Open();
-                //var p = new DynamicParameters();
-                //p.Add("@ProductId", id);
-                //p.Add("@Name", dbType: DbType.String, direction: ParameterDirection.Output);
-                //p.Add("@Quantity", dbType: DbType.Int32, direction: ParameterDirection.Output);
-                //p.Add("@Price", dbType: DbType.Decimal, direction: ParameterDirection.Output);
+               
+                //try
+                //{
+                //    dbConnection.Open();
+                //    var p = new DynamicParameters();
+                //    p.Add("@ProductId", id);
+                //    p.Add("@Name", dbType: DbType.String, direction: ParameterDirection.Output);
+                //    p.Add("@Quantity", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                //    p.Add("@Price", dbType: DbType.Decimal, direction: ParameterDirection.Output);
 
-                //dbConnection.Execute("spGetProductById", p, commandType: CommandType.StoredProcedure);
-                //Product p1 = new Product();
-                //p1.Name = p.Get<string>("@Name");
-                //p1.Quantity = p.Get<int>("@Quantity");
-                //p1.Price = p.Get<float>("@Price");
-                //return p1;
+                //    dbConnection.Execute("spGetProductById", p, commandType: CommandType.StoredProcedure);
+                //    Product p1 = new Product();
+                //    p1.Name = p.Get<string>("@Name");
+                //    p1.Quantity = p.Get<int>("@Quantity");
+                //    p1.Price = p.Get<float>("@Price");
+                //    return p1;
+                //}
+                //catch (Exception e)
+                //{
+                //    string errorMessage = LogEntry.ExceptionLog.CreateErrorMessage(e);
+                //    LogEntry.ExceptionLog.LogFileWrite(errorMessage);
 
+                //}
+             
             }
         }
 

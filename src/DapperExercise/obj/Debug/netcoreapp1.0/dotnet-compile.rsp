@@ -181,6 +181,7 @@
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\netstandard1.3\System.Xml.XmlDocument.dll
 --reference:C:\Users\sharma_hm\.nuget\packages\System.Xml.XPath\4.0.1\ref\netstandard1.3\System.Xml.XPath.dll
+--reference:D:\Shared\DapperExercise\src\LogEntry\bin\Debug\netstandard1.6\LogEntry.dll
 --resource:"D:\Shared\DapperExercise\src\DapperExercise\obj\Debug\netcoreapp1.0\DapperExercisedotnet-compile.deps.json",DapperExercise.deps.json
 D:\Shared\DapperExercise\src\DapperExercise\Program.cs
 D:\Shared\DapperExercise\src\DapperExercise\Startup.cs

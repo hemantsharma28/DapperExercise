@@ -29,7 +29,8 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "Dapper": "1.50.2",
-          "Swashbuckle": "6.0.0-beta902"
+          "Swashbuckle": "6.0.0-beta902",
+          "LogEntry": "1.0.0"
         },
         "compile": {
           "DapperExercise.dll": {}
@@ -2706,6 +2707,14 @@
           "System.Xml.XDocument": "4.0.11",
           "System.Xml.XPath": "4.0.1"
         }
+      },
+      "LogEntry/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "LogEntry.dll": {}
+        }
       }
     },
     ".NETCoreApp,Version=v1.0/": {
@@ -2724,7 +2733,8 @@
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "Dapper": "1.50.2",
-          "Swashbuckle": "6.0.0-beta902"
+          "Swashbuckle": "6.0.0-beta902",
+          "LogEntry": "1.0.0"
         },
         "runtime": {
           "DapperExercise.dll": {}
@@ -4358,6 +4368,9 @@
           "System.Runtime": "4.1.0",
           "System.Runtime.Extensions": "4.1.0",
           "System.Text.Encoding": "4.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -5265,6 +5278,14 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+        }
+      },
+      "LogEntry/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "runtime": {
+          "LogEntry.dll": {}
         }
       }
     }
@@ -6269,6 +6290,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-FLhdYJx4331oGovQypQ8JIw2kEmNzCsjVOVYY/16kZTUoquZG85oVn7yUhBE2OZt1yGPSXAL0HTEfzjlbNpM7Q=="
+    },
+    "LogEntry/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
