@@ -27,14 +27,39 @@ namespace DapperExercise.Repository
             }
         }
 
+        //public void Add(Product prod)
+        //{
+        //    using (IDbConnection dbConnection = Connection)
+        //    {
+        //        string sQuery = "INSERT INTO Products (Name, Quantity, Price)"
+        //                        + " VALUES(@Name, @Quantity, @Price)";
+        //        dbConnection.Open();
+        //        dbConnection.Execute(sQuery, prod);
+        //    }
+        //}
+
         public void Add(Product prod)
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "INSERT INTO Products (Name, Quantity, Price)"
-                                + " VALUES(@Name, @Quantity, @Price)";
+                //string sQuery = "UPDATE Products SET Name = @Name,"
+                //               + " Quantity = @Quantity, Price= @Price"
+                //               + " WHERE ProductId = @ProductId";
                 dbConnection.Open();
-                dbConnection.Execute(sQuery, prod);
+                //dbConnection.Query(sQuery, prod);
+                //dbConnection.Open();
+
+                var p = new DynamicParameters();
+                // p.Add("@ProductId", prod.ProductId);
+                p.Add("@Name", prod.Name);
+                p.Add("@Quantity", prod.Quantity);
+                p.Add("@Price", prod.Price);
+
+                dbConnection.Execute("spAddProduct", p, commandType: CommandType.StoredProcedure);
+                //Product p1 = new Product();
+                //p1.Name = p.Get<string>("@Name");
+                //p1.Quantity = p.Get<int>("@Quantity");
+                //p1.Price = p.Get<double>("@Price");              
             }
         }
 
@@ -68,12 +93,10 @@ namespace DapperExercise.Repository
                 //}
                 //Product p = new Product();
                 dbConnection.Open();
-                //   
-
+                
                 using (var multipleResult = dbConnection.QueryMultiple("spGetProductById", new { Id = id }, commandType: CommandType.StoredProcedure))
                 {
                     var product = multipleResult.Read<Product>().SingleOrDefault();
-
                     return product;
                 }
                
@@ -107,22 +130,42 @@ namespace DapperExercise.Repository
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "DELETE FROM Products"
-                             + " WHERE ProductId = @Id";
+                //string sQuery = "DELETE FROM Products"
+                //             + " WHERE ProductId = @Id";
                 dbConnection.Open();
-                dbConnection.Execute(sQuery, new { Id = id });
+                //dbConnection.Execute(sQuery, new { Id = id });
+
+             
+                //var result = dbConnection.Query<Product>("spDeleteProduct", new { Id = id },
+                //            commandType: CommandType.StoredProcedure).First();
+                var result = dbConnection.Execute("spDeleteProduct", new {Id=id }, commandType: CommandType.StoredProcedure);
             }
         }
 
-        public void Update(Product prod)
+        public Product Update(int id,Product prod)
         {
             using (IDbConnection dbConnection = Connection)
             {
-                string sQuery = "UPDATE Products SET Name = @Name,"
-                               + " Quantity = @Quantity, Price= @Price"
-                               + " WHERE ProductId = @ProductId";
+                //string sQuery = "UPDATE Products SET Name = @Name,"
+                //               + " Quantity = @Quantity, Price= @Price"
+                //               + " WHERE ProductId = @ProductId";
                 dbConnection.Open();
-                dbConnection.Query(sQuery, prod);
+                //dbConnection.Query(sQuery, prod);
+                //dbConnection.Open();
+
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+                p.Add("@Name", prod.Name);
+                p.Add("@Quantity", prod.Quantity);
+                p.Add("@Price", prod.Price);
+
+                dbConnection.Execute("spUpdateProduct", p, commandType: CommandType.StoredProcedure);
+                Product p1 = new Product();
+                p1.ProductId = prod.ProductId;
+                p1.Name = p.Get<string>("@Name");
+                p1.Quantity = p.Get<int>("@Quantity");
+                p1.Price = p.Get<double>("@Price");
+                return p1;
             }
         }
     }

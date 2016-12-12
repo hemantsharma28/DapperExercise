@@ -45,7 +45,7 @@ namespace DapperExercise.Controllers
         {
             prod.ProductId = id;
             if (ModelState.IsValid)
-                productRepository.Update(prod);
+                prod=productRepository.Update(id,prod);
         }
 
         // DELETE api/values/5
