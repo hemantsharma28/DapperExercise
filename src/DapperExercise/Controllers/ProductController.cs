@@ -26,7 +26,7 @@ namespace DapperExercise.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Product Get(int id)
+        public Product GetById(int id)
         {
             return productRepository.GetByID(id);
         }
